@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
                 String number = phone.getText().toString();
                 String addre = address.getText().toString();
                 String date = DOB.getText().toString();
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                // find the radiobutton by returned id
+                radioButton = (RadioButton) findViewById(selectedId);
 
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 intent.putExtra("key_name1",name1);
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("key_name3",number);
                 intent.putExtra("key_name4",addre);
                 intent.putExtra("key_name5",date);
+                intent.putExtra("key_name6",radioButton.getText());
                 startActivity(intent);
             }
         });
