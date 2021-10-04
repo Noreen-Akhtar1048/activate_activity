@@ -10,8 +10,6 @@ import android.widget.RadioGroup;
 public class MainActivity2 extends AppCompatActivity {
 
     EditText first_name,last_name,phone,address,DOB,gender;
-    RadioButton radioButton;
-    RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +22,20 @@ public class MainActivity2 extends AppCompatActivity {
         address = findViewById(R.id.edit_text4);
         DOB = findViewById(R.id.edit_text5);
         gender = findViewById(R.id.edit_text6);
-        int radioId = radioGroup.getCheckedRadioButtonId();
-        radioButton = findViewById(radioId);
 
         String name1 = getIntent().getStringExtra("key_name1");
         String name2 = getIntent().getStringExtra("key_name2");
         String number = getIntent().getStringExtra("key_name3");
         String addre = getIntent().getStringExtra("key_name4");
         String date = getIntent().getStringExtra("key_name5");
+        String dateg = getIntent().getStringExtra("key_name6");
 
         first_name.setText(name1);
         last_name.setText(name2);
         phone.setText(number);
         address.setText(addre);
         DOB.setText(date);
+        gender.setText(dateg);
 
     }
 }
